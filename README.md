@@ -46,6 +46,7 @@ The goal of this project is to:
 - Loads transformed data into **Google BigQuery**.
 ![image](https://github.com/user-attachments/assets/dd2cc1d5-7951-424d-9900-c3854cb19e77)
 <img width="468" alt="image" src="https://github.com/user-attachments/assets/aa850842-8375-4fc1-8dcc-5794bc0cd31d" />
+
 ![image](https://github.com/user-attachments/assets/e69da14f-f398-49f1-9331-dfca2401f223)
 <img width="332" alt="image" src="https://github.com/user-attachments/assets/17ca1099-9656-4dbd-8c2f-537c9f147e5b" />
 
