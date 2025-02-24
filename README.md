@@ -78,94 +78,112 @@ The goal of this project is to:
 ```sh
 git clone https://github.com/yourusername/Employee_Data_ETL_Pipeline.git
 cd Employee_Data_ETL_Pipeline
+```
 
-🔹 2. Install Dependencies
-sh
-Copy
-Edit
+### **🔹 2. Install Dependencies**
+```sh
 pip install -r requirements.txt
-🔹 3. Set Up Google Cloud Authentication
-sh
-Copy
-Edit
+```
+
+### **🔹 3. Set Up Google Cloud Authentication**
+```sh
 gcloud auth application-default login
 gcloud config set project <your-project-id>
-🔹 4. Create GCS Bucket
-sh
-Copy
-Edit
+```
+
+### **🔹 4. Create GCS Bucket**
+```sh
 gcloud storage buckets create bkt-employee-data-management --location=us-central1
-🔹 5. Run Data Extraction
-sh
-Copy
-Edit
+```
+
+### **🔹 5. Run Data Extraction**
+```sh
 python extract.py
-🔹 6. Upload to Google Cloud Storage
-sh
-Copy
-Edit
+```
+
+### **🔹 6. Upload to Google Cloud Storage**
+```sh
 gcloud storage cp employee_data.csv gs://bkt-employee-data-management/
-🔹 7. Deploy Cloud Data Fusion Pipeline
-Go to Google Cloud Data Fusion
-Create a pipeline named etl-pipeline
-Ingest Data from GCS → Apply Transformations → Load into BigQuery
-Deploy and run pipeline.
-🔹 8. Start Airflow DAG
-Upload dag.py to Airflow DAGs folder.
-Trigger DAG manually:
-sh
-Copy
-Edit
+```
+
+### **🔹 7. Deploy Cloud Data Fusion Pipeline**
+1. **Go to Google Cloud Data Fusion**
+2. **Create a pipeline** named **`etl-pipeline`**
+3. **Ingest Data from GCS → Apply Transformations → Load into BigQuery**
+4. **Deploy and run the pipeline.**
+
+### **🔹 8. Start Airflow DAG**
+- Upload `dag.py` to Airflow DAGs folder.
+- **Trigger DAG manually**:
+```sh
 airflow dags trigger employee_data
-Monitor in Airflow UI.
-🛠 Troubleshooting
-1. Airflow DAG Fails (404 Data Fusion Error)
-Cause: Pipeline name mismatch or missing pipeline.
-✅ Fix:
+```
+- **Monitor in Airflow UI.**
 
-Ensure pipeline name in DAG matches Data Fusion.
-Check pipeline logs in Cloud Data Fusion.
-2. Data Not Showing in BigQuery
-Cause: Data Fusion pipeline failed.
-✅ Fix:
+---
 
-Go to Data Fusion UI and check logs.
-Ensure BigQuery dataset exists.
-3. Looker Studio Not Connecting
-Cause: Missing permissions for BigQuery.
-✅ Fix:
+## **🛠 Troubleshooting**
+### **1️⃣ Airflow DAG Fails (404 Data Fusion Error)**
+**Cause:** Pipeline name mismatch or missing pipeline.  
+🇹 **Fix:**
+- Ensure **pipeline name in DAG matches** Data Fusion.
+- Check **pipeline logs in Cloud Data Fusion UI**.
 
-Grant BigQuery Data Viewer role in IAM.
-📊 Visualization Dashboard
-Looker Studio connects to BigQuery to create dashboards.
-Displays Employee Data Insights.
-Accessible in Google Data Studio.
-🚀 Next Steps
-Optimize pipeline for performance.
-Add real-time data ingestion using Pub/Sub.
-Implement data quality checks.
-🏆 Key Learnings
-✅ Python (Faker, GCS SDK)
-✅ Google Cloud Storage (GCS)
-✅ Apache Airflow (Cloud Composer)
-✅ Cloud Data Fusion (Wrangler, Pipelines)
-✅ Google BigQuery
-✅ Looker Studio for Visualization
+### **2️⃣ Data Not Showing in BigQuery**
+**Cause:** Data Fusion pipeline failed.  
+🇹 **Fix:**
+- Go to **Data Fusion UI** and check logs.
+- Ensure **BigQuery dataset exists**.
 
-🤝 Contributing
-Feel free to fork the repo, submit PRs, or open issues.
+### **3️⃣ Looker Studio Not Connecting**
+**Cause:** Missing permissions for BigQuery.  
+🇹 **Fix:**
+- Grant **BigQuery Data Viewer** role in IAM.
 
-sh
-Copy
-Edit
+---
+
+## **📊 Visualization Dashboard**
+- **Looker Studio** connects to **BigQuery** for creating dashboards.
+- Displays **Employee Data Insights**.
+- Accessible in **Google Data Studio**.
+
+---
+
+## **🚀 Next Steps**
+- **Optimize pipeline** for performance.
+- **Add real-time data ingestion** using Pub/Sub.
+- **Implement data quality checks**.
+
+---
+
+## **🏆 Key Learnings**
+✅ Python (Faker, GCS SDK)  
+✅ Google Cloud Storage (GCS)  
+✅ Apache Airflow (Cloud Composer)  
+✅ Cloud Data Fusion (Wrangler, Pipelines)  
+✅ Google BigQuery  
+✅ Looker Studio for Visualization  
+
+---
+
+## **🤝 Contributing**
+Feel free to **fork** the repo, **submit PRs**, or **open issues**.
+
+```sh
 git checkout -b feature-branch
 git commit -m "Add feature"
 git push origin feature-branch
-📜 License
-This project is licensed under the MIT License.
+```
 
-📞 Contact
+---
+
+## **📚 License**
+This project is licensed under the **MIT License**.
+
+---
+
+## **📞 Contact**
 For questions, reach out via:
+- **Email:** mugdhakarodkar0819@gmail.com  
+- **LinkedIn:** [Your Profile](https://www.linkedin.com/in/mugdha-karodkar)  
 
-Email: mugdhakarodkar0819@gmail.com
-LinkedIn: Your Profile
