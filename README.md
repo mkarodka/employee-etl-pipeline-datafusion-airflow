@@ -7,12 +7,6 @@ This project builds a **fully automated ETL pipeline** on **Google Cloud Platfor
 
 ---
 
-## 📂 **Project Structure**
-📁 Employee_Data_ETL_Pipeline │── 📜 dag.py # Apache Airflow DAG to orchestrate ETL workflow │── 📜 extract.py # Python script to generate and upload employee data │── 📜 employee_data.csv # Sample employee dataset │── 📜 Architecture_Diagram.drawio # Architecture diagram (editable) │── 📜 Project_Notes.docx # Detailed project documentation │── 📂 dags # Airflow DAGs directory │── 📂 scripts # Python scripts for extraction & transformation │── 📂 data # Data storage folder │── 📂 logs # Execution logs │── 📂 gcs_bucket # GCS bucket for raw data storage │──
-
-
----
-
 ## 🎯 **Problem Statement**
 The goal of this project is to:
 1. **Extract** employee data from various sources.
@@ -24,23 +18,29 @@ The goal of this project is to:
 ---
 
 ## 🏗 **Architecture**
-![ETL Pipeline Architecture](Architecture_Diagram.drawio)
+<img width="263" alt="image" src="https://github.com/user-attachments/assets/c6a0a841-61ae-45dd-b384-ae2e9bf0be1f" />
 
 ### **🔧 Tech Stack**
+<img width="233" alt="image" src="https://github.com/user-attachments/assets/2c7e4203-ad4c-4df1-bbb1-468fa5259770" />
+
 - **Data Extraction** → Python (`extract.py`)
 - **Storage** → Google Cloud Storage (GCS)
 - **Data Processing** → Cloud Data Fusion
 - **Orchestration** → Apache Airflow (Cloud Composer)
 - **Data Warehouse** → Google BigQuery
 - **Data Visualization** → Looker Studio
-
 ---
-
 ## ⚙️ **Workflow**
 ### **1️⃣ Data Extraction**
 - The `extract.py` script uses **Faker** library to generate **synthetic employee data**.
-- Saves data to **CSV** (`employee_data.csv`).
+- Saves data to **CSV** (`employee_data.csv`). 
 - Uploads the file to a **Google Cloud Storage (GCS) bucket**.
+- ![image](https://github.com/user-attachments/assets/79401d5f-9f39-4658-ad1c-d35b451823cf)
+
+![image](https://github.com/user-attachments/assets/dd2cc1d5-7951-424d-9900-c3854cb19e77)
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/aa850842-8375-4fc1-8dcc-5794bc0cd31d" />
+![image](https://github.com/user-attachments/assets/e69da14f-f398-49f1-9331-dfca2401f223)
+
 
 ### **2️⃣ Data Transformation (Cloud Data Fusion)**
 - Reads employee data from GCS.
@@ -49,6 +49,13 @@ The goal of this project is to:
   - **Encodes passwords** using Base64.
   - Cleans and standardizes data.
 - Loads transformed data into **Google BigQuery**.
+<img width="332" alt="image" src="https://github.com/user-attachments/assets/17ca1099-9656-4dbd-8c2f-537c9f147e5b" />
+
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/aa8615a2-41ff-4430-83ba-20b5b5386f5e" />
+<img width="326" alt="image" src="https://github.com/user-attachments/assets/ff6e7657-11b1-4378-b3d5-229e08ccc3ab" />
+<img width="292" alt="image" src="https://github.com/user-attachments/assets/359d6cd8-6559-46e5-97ce-294a920e2231" />
+
+<img width="410" alt="image" src="https://github.com/user-attachments/assets/23edc062-984a-4988-9e6e-374a29bc42e5" />
 
 ### **3️⃣ Data Orchestration (Apache Airflow)**
 - DAG (`dag.py`) automates the ETL process:
@@ -58,9 +65,14 @@ The goal of this project is to:
   - **Monitor job execution**.
 - Scheduled to **run daily**.
 
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/6d2d01e6-f956-4d2f-a0a1-0bec6dd060af" />
+
+
 ### **4️⃣ Data Analysis & Visualization**
 - Data stored in **BigQuery**.
 - Looker Studio connects to **BigQuery** for real-time **dashboard visualization**.
+
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/8458a276-1a23-4bbc-b1ff-57c3608a4b64" />
 
 ---
 
@@ -76,7 +88,7 @@ The goal of this project is to:
 
 ### **🔹 1. Clone Repository**
 ```sh
-git clone https://github.com/yourusername/Employee_Data_ETL_Pipeline.git
+git clone https://github.com/mkarodka/Employee_Data_ETL_Pipeline.git
 cd Employee_Data_ETL_Pipeline
 ```
 
@@ -122,33 +134,6 @@ airflow dags trigger employee_data
 
 ---
 
-## **🛠 Troubleshooting**
-### **1️⃣ Airflow DAG Fails (404 Data Fusion Error)**
-**Cause:** Pipeline name mismatch or missing pipeline.  
-🇹 **Fix:**
-- Ensure **pipeline name in DAG matches** Data Fusion.
-- Check **pipeline logs in Cloud Data Fusion UI**.
-
-### **2️⃣ Data Not Showing in BigQuery**
-**Cause:** Data Fusion pipeline failed.  
-🇹 **Fix:**
-- Go to **Data Fusion UI** and check logs.
-- Ensure **BigQuery dataset exists**.
-
-### **3️⃣ Looker Studio Not Connecting**
-**Cause:** Missing permissions for BigQuery.  
-🇹 **Fix:**
-- Grant **BigQuery Data Viewer** role in IAM.
-
----
-
-## **📊 Visualization Dashboard**
-- **Looker Studio** connects to **BigQuery** for creating dashboards.
-- Displays **Employee Data Insights**.
-- Accessible in **Google Data Studio**.
-
----
-
 ## **🚀 Next Steps**
 - **Optimize pipeline** for performance.
 - **Add real-time data ingestion** using Pub/Sub.
@@ -174,16 +159,10 @@ git checkout -b feature-branch
 git commit -m "Add feature"
 git push origin feature-branch
 ```
-
----
-
-## **📚 License**
-This project is licensed under the **MIT License**.
-
 ---
 
 ## **📞 Contact**
 For questions, reach out via:
 - **Email:** mugdhakarodkar0819@gmail.com  
-- **LinkedIn:** [Your Profile](https://www.linkedin.com/in/mugdha-karodkar)  
+- **LinkedIn:** [Mugdha Karodkar](https://www.linkedin.com/in/mugdha-karodkar)  
 
