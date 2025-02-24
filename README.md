@@ -37,11 +37,6 @@ The goal of this project is to:
 - Uploads the file to a **Google Cloud Storage (GCS) bucket**.
 - ![image](https://github.com/user-attachments/assets/79401d5f-9f39-4658-ad1c-d35b451823cf)
 
-![image](https://github.com/user-attachments/assets/dd2cc1d5-7951-424d-9900-c3854cb19e77)
-<img width="468" alt="image" src="https://github.com/user-attachments/assets/aa850842-8375-4fc1-8dcc-5794bc0cd31d" />
-![image](https://github.com/user-attachments/assets/e69da14f-f398-49f1-9331-dfca2401f223)
-
-
 ### **2️⃣ Data Transformation (Cloud Data Fusion)**
 - Reads employee data from GCS.
 - **Wrangler Transformation:**
@@ -49,12 +44,14 @@ The goal of this project is to:
   - **Encodes passwords** using Base64.
   - Cleans and standardizes data.
 - Loads transformed data into **Google BigQuery**.
+![image](https://github.com/user-attachments/assets/dd2cc1d5-7951-424d-9900-c3854cb19e77)
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/aa850842-8375-4fc1-8dcc-5794bc0cd31d" />
+![image](https://github.com/user-attachments/assets/e69da14f-f398-49f1-9331-dfca2401f223)
 <img width="332" alt="image" src="https://github.com/user-attachments/assets/17ca1099-9656-4dbd-8c2f-537c9f147e5b" />
 
 <img width="468" alt="image" src="https://github.com/user-attachments/assets/aa8615a2-41ff-4430-83ba-20b5b5386f5e" />
 <img width="326" alt="image" src="https://github.com/user-attachments/assets/ff6e7657-11b1-4378-b3d5-229e08ccc3ab" />
 <img width="292" alt="image" src="https://github.com/user-attachments/assets/359d6cd8-6559-46e5-97ce-294a920e2231" />
-
 <img width="410" alt="image" src="https://github.com/user-attachments/assets/23edc062-984a-4988-9e6e-374a29bc42e5" />
 
 ### **3️⃣ Data Orchestration (Apache Airflow)**
