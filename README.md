@@ -69,9 +69,7 @@ The goal of this project is to:
 ### **4️⃣ Data Analysis & Visualization**
 - Data stored in **BigQuery**.
 - Looker Studio connects to **BigQuery** for real-time **dashboard visualization**.
-
-https://github.com/mkarodka/employee-etl-pipeline-datafusion-airflow/blob/a624c16f1016c85c5aa5cd1e74f74f2598568043/Employee_Report.pdf
-
+![image](https://github.com/user-attachments/assets/633dfa5c-d9c6-4a12-a9b7-b95751aaa80a)
 ---
 
 ## 🔧 **Setup & Deployment**
